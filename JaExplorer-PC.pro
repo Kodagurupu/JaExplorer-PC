@@ -14,7 +14,8 @@ SOURCES += \
     source/network.cpp \
     source/parse.cpp
 
-RESOURCES += source/qml.qrc
+RESOURCES += source/qml.qrc \
+    source/images.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

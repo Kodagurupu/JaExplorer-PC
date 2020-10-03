@@ -7,5 +7,8 @@
         <file>../assets/Forms/LearnKana.qml</file>
         <file>../assets/Forms/LearnKanji.qml</file>
         <file>../assets/Forms/Videos.qml</file>
+        <file>../assets/Forms/LeftPanel.qml</file>
+        <file>../assets/Forms/WelcomePage.qml</file>
+        <file>../assets/Forms/PanelButton.qml</file>
     </qresource>
 </RCC>
