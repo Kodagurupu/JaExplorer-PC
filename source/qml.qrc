@@ -1,5 +1,11 @@
 <RCC>
     <qresource prefix="/">
         <file>../assets/Forms/main.qml</file>
+        <file>../assets/Forms/News.qml</file>
+        <file>../assets/Forms/Radio.qml</file>
+        <file>../assets/Forms/Favorites.qml</file>
+        <file>../assets/Forms/LearnKana.qml</file>
+        <file>../assets/Forms/LearnKanji.qml</file>
+        <file>../assets/Forms/Videos.qml</file>
     </qresource>
 </RCC>
