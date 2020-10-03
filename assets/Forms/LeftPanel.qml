@@ -4,34 +4,35 @@ import QtQuick.Layouts 1.3
 Item
 {
     id: root
-    width: 42
-    height: parent.height
 
     property var switchFunc: root.switchFunc
 
-
+    // Panel space
     Rectangle
     {
         id: panel
         anchors.fill: parent
         color: "black"
 
+        // right grey line which separete panel from pages
         Rectangle
         {
             anchors.right: parent.right
-            color: "grey"
-            width: 1
             height: parent.height
+            width: 1
+            radius: 5
+            color: "grey"
         }
 
-        ColumnLayout
+        // List of pages preview
+        ListView
         {
             anchors.fill: parent
             spacing: 10
-
-            PanelButton
+            model: [ {"imageUrl" : "qrc:/assets/Images/news.png"} ]
+            delegate: PanelButton
             {
-                imageUrl: ""
+                imageUrl: modelData["imageUrl"]
             }
         }
     }

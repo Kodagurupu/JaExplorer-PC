@@ -1,4 +1,4 @@
-QT += quick
+QT += quick sql
 
 CONFIG += c++20
 
@@ -29,6 +29,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    source/SqlTables.h \
     source/core.h \
     source/database.h \
     source/messageservice.h \

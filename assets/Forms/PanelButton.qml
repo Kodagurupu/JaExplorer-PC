@@ -4,15 +4,16 @@ Item
 {
     id: root
 
-    property string imageUrl: root.imageUrl
+    property string imageUrl: ""
     property string description: ""
 
-    anchors.fill: parent
+    width: parent.width - 2
+    height: 40
 
     Image
     {
         anchors.fill: parent
-        source: imageUrl
+        source: imageUrl === "" ? "" : imageUrl
     }
 
 }

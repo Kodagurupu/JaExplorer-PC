@@ -1,5 +1,11 @@
 <RCC>
     <qresource prefix="/">
         <file>../assets/Images/Fuji.jpg</file>
+        <file>../assets/Images/news.png</file>
+        <file>../assets/Images/maximize.svg</file>
+        <file>../assets/Images/maximize2.svg</file>
+        <file>../assets/Images/minimize.svg</file>
+        <file>../assets/Images/remove.svg</file>
+        <file>../assets/Images/windowed.svg</file>
     </qresource>
 </RCC>

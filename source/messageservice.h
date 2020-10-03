@@ -1,16 +1,17 @@
 #ifndef MESSAGESERVICE_H
 #define MESSAGESERVICE_H
 
+#include <QDebug>
 #include <QObject>
 
 class MessageService : public QObject
 {
     Q_OBJECT
 public:
-    explicit MessageService(QObject *parent = nullptr);
+    MessageService(QObject * parent = nullptr);
 
-signals:
-
+public slots:
+    void reciveMessage(QString);
 };
 
 #endif // MESSAGESERVICE_H
