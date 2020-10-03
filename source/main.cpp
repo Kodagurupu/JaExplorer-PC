@@ -1,8 +1,24 @@
+/*
+ * Include global libs
+ */
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+/*
+ * Include local libs
+ */
+#include "database.h"
+
 int main(int argc, char *argv[])
 {
+    /*
+     * Init database
+     */
+    Database db;
+
+    /*
+     * Run application Qt quick
+     */
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
