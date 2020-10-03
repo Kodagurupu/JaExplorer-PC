@@ -13,7 +13,7 @@ Window
     visible: true
     title: qsTr("Hello World")
     color: "black"
-    opacity: 0.9
+    opacity: 0.95
 
     // Allow translucent background
     flags: Qt.Window | Qt.CustomizeWindowHint

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     /*
      * Init database
      */
-    //Database db;
+    Database db;
 
     /*
      * Run application Qt quick
