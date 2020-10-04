@@ -1,5 +1,4 @@
-#ifndef DATABASE_H
-#define DATABASE_H
+#pragma once
 
 #include <QDir>
 #include <QtSql>
@@ -24,5 +23,3 @@ private:
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
 };
-
-#endif // DATABASE_H

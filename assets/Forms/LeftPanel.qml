@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.9
 import QtQuick.Layouts 1.3
 
 Item
@@ -29,12 +29,25 @@ Item
         {
             anchors.fill: parent
             spacing: 10
-            model: [ {"imageUrl" : "qrc:/assets/Images/news.png"} ]
+            model:
+            [
+                {"imageUrl" : "qrc:/assets/Images/news.png"},
+                {"imageUrl" : "qrc:/assets/Images/words.png"},
+                {"imageUrl" : "qrc:/assets/Images/favourites.png"},
+                {"imageUrl" : "qrc:/assets/Images/kana_a.png"},
+                {"imageUrl" : "qrc:/assets/Images/kanji.png"},
+                {"imageUrl" : "qrc:/assets/Images/video.png"},
+                {"imageUrl" : "qrc:/assets/Images/radio.png"},
+                {"imageUrl" : "qrc:/assets/Images/options.png"}
+            ]
             delegate: PanelButton
             {
                 imageUrl: modelData["imageUrl"]
             }
+
+
         }
+
     }
 
 }

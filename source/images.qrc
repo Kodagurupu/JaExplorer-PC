@@ -1,11 +1,18 @@
 <RCC>
     <qresource prefix="/">
+        <file>../assets/Images/favourites.png</file>
         <file>../assets/Images/Fuji.jpg</file>
-        <file>../assets/Images/news.png</file>
+        <file>../assets/Images/kana_a.png</file>
+        <file>../assets/Images/kanji.png</file>
         <file>../assets/Images/maximize.svg</file>
         <file>../assets/Images/maximize2.svg</file>
         <file>../assets/Images/minimize.svg</file>
+        <file>../assets/Images/news.png</file>
+        <file>../assets/Images/options.png</file>
+        <file>../assets/Images/radio.png</file>
         <file>../assets/Images/remove.svg</file>
+        <file>../assets/Images/video.png</file>
         <file>../assets/Images/windowed.svg</file>
+        <file>../assets/Images/words.png</file>
     </qresource>
 </RCC>

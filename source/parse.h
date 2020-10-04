@@ -1,5 +1,4 @@
-#ifndef PARSE_H
-#define PARSE_H
+#pragma once
 
 #include <QObject>
 
@@ -12,5 +11,3 @@ public:
 signals:
 
 };
-
-#endif // PARSE_H

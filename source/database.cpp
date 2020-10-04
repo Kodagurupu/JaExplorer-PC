@@ -1,3 +1,6 @@
+/*
+ * Include local libs
+ */
 #include "database.h"
 
 Database::Database(QObject *parent)

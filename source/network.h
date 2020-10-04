@@ -1,5 +1,4 @@
-#ifndef NETWORK_H
-#define NETWORK_H
+#pragma once
 
 
 class Network
@@ -7,5 +6,3 @@ class Network
 public:
     Network();
 };
-
-#endif // NETWORK_H

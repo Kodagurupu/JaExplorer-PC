@@ -1,5 +1,4 @@
-#ifndef MESSAGESERVICE_H
-#define MESSAGESERVICE_H
+#pragma once
 
 #include <QDebug>
 #include <QObject>
@@ -13,5 +12,3 @@ public:
 public slots:
     void reciveMessage(QString);
 };
-
-#endif // MESSAGESERVICE_H

@@ -1,5 +1,4 @@
-#ifndef CORE_H
-#define CORE_H
+#pragma once
 
 #include <QObject>
 
@@ -12,5 +11,3 @@ public:
 signals:
 
 };
-
-#endif // CORE_H

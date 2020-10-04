@@ -1,6 +1,6 @@
-import QtQuick 2.12
+import QtQuick 2.9
 import QtQuick.Controls 2.5
-import QtQuick.Window 2.12
+import QtQuick.Window 2.3
 
 Window
 {
@@ -11,9 +11,9 @@ Window
     width: 720
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("JaExplorer-PC")
     color: "black"
-    opacity: 0.95
+    opacity: 0.99
 
     // Allow translucent background
     flags: Qt.Window | Qt.CustomizeWindowHint
