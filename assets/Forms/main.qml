@@ -13,7 +13,7 @@ Window
     visible: true
     title: qsTr("JaExplorer-PC")
     color: "black"
-    opacity: 0.99
+    opacity: 0.97
 
     // Allow translucent background
     flags: Qt.Window | Qt.CustomizeWindowHint

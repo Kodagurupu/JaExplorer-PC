@@ -1,6 +1,11 @@
 #pragma once
 
 #include <QObject>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonDocument>
+
+#include "database.h"
 
 class Core : public QObject
 {
@@ -8,6 +13,9 @@ class Core : public QObject
 public:
     explicit Core(QObject *parent = nullptr);
 
-signals:
+    Q_INVOKABLE QJsonArray getRadio();
+
+private:
+    Database db;
 
 };

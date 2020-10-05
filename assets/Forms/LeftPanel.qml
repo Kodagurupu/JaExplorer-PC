@@ -43,6 +43,19 @@ Item
             delegate: PanelButton
             {
                 imageUrl: modelData["imageUrl"]
+
+                MouseArea
+                {
+                    anchors.fill: parent
+                    onClicked:
+                    {
+                        if (index == 6)
+                        {
+                            switchFunc.fileName = "Radio.qml"
+                            switchFunc.start()
+                        }
+                    }
+                }
             }
 
 

@@ -22,6 +22,31 @@ Database::Database(QObject *parent)
     checkDatabase();
 }
 
+QJsonArray Database::getRadio()
+{
+    QJsonArray radioStations;
+
+    if (!db.open())
+        emit reciveMessage("[DATABASE]" + db.lastError().text());
+
+    QSqlQuery query;
+
+    query.exec("select * from Radio");
+
+    while (query.next())
+    {
+        QJsonObject temp;
+        temp["id"] = query.value(0).toInt();
+        temp["url"] = query.value(1).toString();
+        temp["preview"] = query.value(2).toString();
+        temp["name"] = query.value(3).toString();
+        temp["favourite"] = query.value(4).toBool();
+        radioStations.append(temp);
+    }
+
+    return radioStations;
+}
+
 void Database::checkDatabase()
 {
     if (!db.open())

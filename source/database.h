@@ -3,6 +3,9 @@
 #include <QDir>
 #include <QtSql>
 #include <QObject>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonDocument>
 
 #include "messageservice.h"
 #include "SqlTables.h"
@@ -15,6 +18,8 @@ signals:
 
 public:
     explicit Database(QObject *parent = nullptr);
+
+    QJsonArray getRadio();
 
 private:
     void checkDatabase();

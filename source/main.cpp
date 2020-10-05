@@ -7,21 +7,22 @@
 /*
  * Include local libs
  */
-#include "database.h"
+#include "core.h"
 
 int main(int argc, char *argv[])
 {
-    /*
-     * Init database
-     */
-    Database db;
-
     /*
      * Run application Qt quick
      */
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
+
+    /*
+     * Initializing c++ classes to qt quick libs
+     */
+
+    qmlRegisterType<Core>("CoreApi", 0, 1, "CoreApi");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/assets/Forms/main.qml"));
