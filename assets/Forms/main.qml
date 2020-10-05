@@ -131,10 +131,7 @@ Window
         // dynamic name for switching
         property string fileName: "WelcomePage.qml"
 
-        onTriggered:
-        {
-            loader.source = fileName
-        }
+        onTriggered: loader.source = fileName
     }
 
     // Pages
@@ -146,6 +143,11 @@ Window
         anchors.right: parent.right
         source: "WelcomePage.qml"
         anchors.bottom: parent.bottom
+    }
+
+    Shortcut {
+            sequence: "Esc"
+            onActivated: loader.source = "WelcomePage.qml"
     }
 
     onWidthChanged: if ( wind.windowMaximized == true ) normal[0] = root.width
