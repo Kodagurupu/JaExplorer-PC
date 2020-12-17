@@ -3,15 +3,15 @@
         <file>../assets/Forms/main.qml</file>
         <file>../assets/Forms/News.qml</file>
         <file>../assets/Forms/Radio.qml</file>
-        <file>../assets/Forms/Favorites.qml</file>
         <file>../assets/Forms/LearnKana.qml</file>
         <file>../assets/Forms/LearnKanji.qml</file>
         <file>../assets/Forms/Videos.qml</file>
         <file>../assets/Forms/LeftPanel.qml</file>
         <file>../assets/Forms/WelcomePage.qml</file>
         <file>../assets/Forms/PanelButton.qml</file>
-        <file>../assets/Forms/LearnJapanese.qml</file>
         <file>../assets/Forms/Options.qml</file>
-        <file>../assets/Forms/UpButton.qml</file>
+        <file>../assets/Forms/SavedWords.qml</file>
+        <file>../assets/Forms/Favourites.qml</file>
+        <file>../assets/Forms/WindowControlButtons.qml</file>
     </qresource>
 </RCC>

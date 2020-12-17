@@ -8,7 +8,7 @@
 #include <QJsonDocument>
 
 #include "messageservice.h"
-#include "SqlTables.h"
+#include "sqlTables.h"
 
 class Database : public QObject
 {

@@ -1,24 +1,10 @@
-/*
- * Include local libs
- */
 #include "database.h"
 
 Database::Database(QObject *parent)
     : QObject(parent)
 {
-    /*
-     * Init message service
-     */
     connect(this, &Database::reciveMessage, &console, &MessageService::reciveMessage);
-
-    /*
-     * Open database
-     */
-    db.setDatabaseName("data.bin");
-
-    /*
-     * Check for unexisting tables
-     */
+    db.setDatabaseName("data.sqlite");
     checkDatabase();
 }
 
@@ -36,11 +22,11 @@ QJsonArray Database::getRadio()
     while (query.next())
     {
         QJsonObject temp;
-        temp["id"] = query.value(0).toInt();
-        temp["url"] = query.value(1).toString();
-        temp["preview"] = query.value(2).toString();
-        temp["name"] = query.value(3).toString();
-        temp["favourite"] = query.value(4).toBool();
+        temp["url"] = query.value(0).toString();
+        temp["image_url"] = query.value(1).toString();
+        temp["title"] = query.value(2).toString();
+        temp["site"] = query.value(3).toString();
+        temp["isFavourite"] = query.value(4).toBool();
         radioStations.append(temp);
     }
 
@@ -53,10 +39,6 @@ void Database::checkDatabase()
         emit reciveMessage("[DATABASE]" + db.lastError().text());
 
     QSqlQuery query;
-
-    /*
-     * Creating unexisting tables
-     */
 
     if (!db.contains(QLatin1String("Favourites")))
         query.exec(FAVOURITES_TABLE);
@@ -75,9 +57,6 @@ void Database::checkDatabase()
 
     if (!db.contains(QLatin1String("Video")))
         query.exec(VIDEO_TABLE);
-
-    if (!db.contains(QLatin1String("VideoSuggestions")))
-        query.exec(VIDEO_SUGGESTIONS);
 
     if (!db.contains(QLatin1String("Words")))
         query.exec(WORDS_TABLE);

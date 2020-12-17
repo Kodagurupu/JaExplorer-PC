@@ -26,11 +26,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    source/SqlTables.h \
     source/core.h \
     source/database.h \
     source/messageservice.h \
     source/network.h \
-    source/parse.h
+    source/parse.h \
+    source/sqlTables.h
 
 DISTFILES +=

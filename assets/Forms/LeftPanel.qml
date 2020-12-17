@@ -3,31 +3,33 @@ import QtQuick.Layouts 1.3
 
 Item
 {
-    id: root
+    id: leftPanel
 
-    property var switchFunc: root.switchFunc
+    signal enableNameDisplay
+    signal disableNameDisplay
+    property var switchFunc: leftPanel.switchFunc
 
-    // Panel space
     Rectangle
     {
         id: panel
         anchors.fill: parent
         color: "black"
 
-        // right grey line which separete panel from pages
+        // gray line which separete panel from pages
         Rectangle
         {
             anchors.right: parent.right
             height: parent.height
             width: 1
             radius: 5
-            color: "grey"
+            color: "gray"
         }
 
-        // List of pages preview
+        // Tab list
         ListView
         {
             anchors.fill: parent
+            clip: true
             spacing: 10
             model:
             [
@@ -49,18 +51,57 @@ Item
                     anchors.fill: parent
                     onClicked:
                     {
+                        if (index == 0)
+                        {
+                            switchFunc.fileName = "News.qml"
+                            switchFunc.start()
+                            enableNameDisplay()
+                        }
+                        if (index == 1)
+                        {
+                            switchFunc.fileName = "SavedWords.qml"
+                            switchFunc.start()
+                            enableNameDisplay()
+                        }
+                        if (index == 2)
+                        {
+                            switchFunc.fileName = "Favourites.qml"
+                            switchFunc.start()
+                            enableNameDisplay()
+                        }
+                        if (index == 3)
+                        {
+                            switchFunc.fileName = "LearnKana.qml"
+                            switchFunc.start()
+                            enableNameDisplay()
+                        }
+                        if (index == 4)
+                        {
+                            switchFunc.fileName = "LearnKanji.qml"
+                            switchFunc.start()
+                            enableNameDisplay()
+                        }
+                        if (index == 5)
+                        {
+                            switchFunc.fileName = "Videos.qml"
+                            switchFunc.start()
+                            enableNameDisplay()
+                        }
                         if (index == 6)
                         {
                             switchFunc.fileName = "Radio.qml"
                             switchFunc.start()
+                            enableNameDisplay()
+                        }
+                        if (index == 7)
+                        {
+                            switchFunc.fileName = "Options.qml"
+                            switchFunc.start()
+                            disableNameDisplay() // Title turns off because the program name is inside the tab
                         }
                     }
                 }
             }
-
-
         }
-
     }
-
 }

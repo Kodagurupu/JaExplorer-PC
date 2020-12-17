@@ -2,7 +2,7 @@ import QtQuick 2.9
 
 Item
 {
-    id: root
+    id: panelButton
 
     property string imageUrl: ""
     property string description: ""

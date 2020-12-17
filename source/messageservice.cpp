@@ -1,6 +1,3 @@
-/*
- * Include local libs
- */
 #include "messageservice.h"
 
 MessageService::MessageService(QObject *parent)
