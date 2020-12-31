@@ -1,18 +1,17 @@
-QT += quick sql
-
+QT += quick sql widgets
 
 CONFIG += c++20
 
 SOURCES += \
-    source/core.cpp \
-    source/database.cpp \
-    source/main.cpp \
-    source/messageservice.cpp \
-    source/network.cpp \
-    source/parse.cpp
+    sources/database.cpp \
+    sources/databaseApi.cpp \
+    sources/main.cpp \
+    sources/messageservice.cpp \
+    sources/network.cpp \
+    sources/parse.cpp
 
-RESOURCES += source/qml.qrc \
-    source/images.qrc
+RESOURCES += sources/qml.qrc \
+             sources/images.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -26,11 +25,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    source/core.h \
-    source/database.h \
-    source/messageservice.h \
-    source/network.h \
-    source/parse.h \
-    source/sqlTables.h
+    sources/database.h \
+    sources/databaseApi.h \
+    sources/messageservice.h \
+    sources/network.h \
+    sources/parse.h \
+    sources/sqlTables.h
 
-DISTFILES +=
+DISTFILES += \
+    database.sqlite

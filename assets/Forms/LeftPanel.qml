@@ -1,12 +1,17 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
 
+/*
+ * Panel for switching between tabs
+ */
+
 Item
 {
     id: leftPanel
 
     signal enableNameDisplay
     signal disableNameDisplay
+
     property var switchFunc: leftPanel.switchFunc
 
     Rectangle
@@ -25,30 +30,31 @@ Item
             color: "gray"
         }
 
-        // Tab list
         ListView
         {
+            id: tabList
             anchors.fill: parent
             clip: true
             spacing: 10
             model:
             [
                 {"imageUrl" : "qrc:/assets/Images/news.png"},
-                {"imageUrl" : "qrc:/assets/Images/words.png"},
+                {"imageUrl" : "qrc:/assets/Images/savedWords.png"},
                 {"imageUrl" : "qrc:/assets/Images/favourites.png"},
-                {"imageUrl" : "qrc:/assets/Images/kana_a.png"},
-                {"imageUrl" : "qrc:/assets/Images/kanji.png"},
+                {"imageUrl" : "qrc:/assets/Images/learnKana.png"},
+                {"imageUrl" : "qrc:/assets/Images/learnKanji.png"},
                 {"imageUrl" : "qrc:/assets/Images/video.png"},
                 {"imageUrl" : "qrc:/assets/Images/radio.png"},
                 {"imageUrl" : "qrc:/assets/Images/options.png"}
             ]
-            delegate: PanelButton
+            delegate: LeftPanelButtons
             {
                 imageUrl: modelData["imageUrl"]
 
                 MouseArea
                 {
                     anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
                     onClicked:
                     {
                         if (index == 0)
@@ -89,7 +95,7 @@ Item
                         }
                         if (index == 6)
                         {
-                            switchFunc.fileName = "Radio.qml"
+                            switchFunc.fileName = "RadioList.qml"
                             switchFunc.start()
                             enableNameDisplay()
                         }

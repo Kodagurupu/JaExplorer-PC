@@ -2,10 +2,9 @@ import QtQuick 2.9
 
 Item
 {
-    id: panelButton
+    id: leftPanelButtons
 
     property string imageUrl: ""
-    property string description: ""
 
     width: parent.width - 2
     height: 40
@@ -13,7 +12,7 @@ Item
     Image
     {
         anchors.fill: parent
-        source: imageUrl === "" ? "" : imageUrl
+        source: imageUrl
     }
 
 }

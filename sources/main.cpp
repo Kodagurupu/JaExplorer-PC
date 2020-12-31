@@ -1,13 +1,14 @@
-#include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
-#include "core.h"
+#include "databaseApi.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
+    QApplication::setWindowIcon(QIcon(":/assets/Images/programLogo.png"));
 
-    qmlRegisterType<Core>("Database", 1, 0, "Database");
+    qmlRegisterType<DatabaseApi>("Database", 1, 0, "Database");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/assets/Forms/main.qml"));

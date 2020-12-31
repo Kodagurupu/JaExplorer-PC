@@ -14,7 +14,7 @@ Item
         font.bold: true
         font.italic: true
         font.pixelSize: 10
-        text: qsTr("Version: a_003")
+        text: qsTr("Version: a_004")
         color: "white"
     }
     Image
@@ -30,7 +30,7 @@ Item
 
     Text
     {
-        id: title
+        id: programName
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.topMargin: 132
@@ -39,5 +39,21 @@ Item
         font.pixelSize: 15
         text: qsTr("JaExplorer Options")
         color: "white"
+    }
+
+    Image
+    {
+        id: gitHub
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: logo.top
+        anchors.topMargin: 72
+        source: "../Images/gitHub.png"
+        sourceSize: Qt.size(72,72)
+        MouseArea
+        {
+            anchors.fill: parent
+            cursorShape: Qt.PointingHandCursor
+            onClicked: Qt.openUrlExternally("https://github.com/Kodagurupu/JaExplorer-PC")
+        }
     }
 }

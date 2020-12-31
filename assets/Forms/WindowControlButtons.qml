@@ -4,61 +4,36 @@ import QtGraphicalEffects 1.0
 
 Item {
     id: windowControlButtons
+
     width: parent.height
     height: parent.height
 
-    property bool closed: false
-    property bool windowMaximized: true
-    property string image: ""
-    property string subImage: ""
-
     signal clicked()
 
-    onWindowMaximizedChanged:
-    {
-        if (windowMaximized)
-        {
-            img.visible = true
-            color.source = img
-            sub.visible = false
-        } else
-        {
-            img.visible = false
-            color.source = sub
-            sub.visible = true
-        }
-    }
+    property bool closed: false
+
+    property string imageLocation: ""
 
     Rectangle
     {
-        id: item
+        id: controlButtons
         anchors.fill: parent
         color: "black"
 
         Image
         {
-            id: img
+            id: image
             mipmap: true
             anchors.centerIn: parent
             sourceSize: Qt.size(17, 17)
-            source: image
-        }
-
-        Image
-        {
-            id: sub
-            mipmap: true
-            anchors.centerIn: parent
-            sourceSize: Qt.size(17, 17)
-            source: subImage
-            visible: false
+            source: imageLocation
         }
 
         ColorOverlay
         {
-            id: color
-            anchors.fill: img
-            source: img
+            id: colorInsideImage
+            anchors.fill: image
+            source: image
             color:  "#808080"
             antialiasing: true
         }
@@ -72,16 +47,16 @@ Item {
             {
                 if ( containsMouse )
                 {
-                    item.color = closed ? "#E81123" : "black"
-                    color.color = "lightblue"
-                } else
+                    controlButtons.color = closed ? "#E81123" : "black"
+                    colorInsideImage.color = "lightblue"
+                }
+                else
                 {
-                    item.color = "black"
-                    color.color = "#808080"
+                    controlButtons.color = "black"
+                    colorInsideImage.color = "#808080"
                 }
             }
             onClicked: windowControlButtons.clicked()
         }
     }
-
 }

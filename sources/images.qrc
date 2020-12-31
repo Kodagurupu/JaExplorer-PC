@@ -1,16 +1,18 @@
 <RCC>
     <qresource prefix="/">
         <file>../assets/Images/favourites.png</file>
-        <file>../assets/Images/kana_a.png</file>
-        <file>../assets/Images/kanji.png</file>
+        <file>../assets/Images/learnKana.png</file>
+        <file>../assets/Images/learnKanji.png</file>
         <file>../assets/Images/minimize.svg</file>
         <file>../assets/Images/news.png</file>
         <file>../assets/Images/options.png</file>
         <file>../assets/Images/radio.png</file>
         <file>../assets/Images/close.svg</file>
         <file>../assets/Images/video.png</file>
-        <file>../assets/Images/words.png</file>
+        <file>../assets/Images/savedWords.png</file>
         <file>../assets/Images/programLogo.png</file>
         <file>../assets/Images/welcomePage.png</file>
+        <file>../assets/Images/site.png</file>
+        <file>../assets/Images/gitHub.png</file>
     </qresource>
 </RCC>

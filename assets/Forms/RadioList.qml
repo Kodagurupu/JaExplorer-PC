@@ -1,6 +1,5 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
-import Database 1.0
 import QtMultimedia 5.9
 
 Item
@@ -8,15 +7,15 @@ Item
     id: radioTab
     anchors.fill: parent
 
-    Audio
+    function checkDatabase()
     {
-        id: audio
+        if (database.radioModel.length <= 0)
+        {
+            tabLoader.source = "DatabaseError.qml"
+        }
     }
 
-    Database
-    {
-        id: core
-    }
+    Component.onCompleted: checkDatabase()
 
     RowLayout
     {
@@ -31,14 +30,14 @@ Item
             Layout.fillWidth: true
             spacing: 2
             clip: true
-            model: core.getRadio()
+            model: database.radioModel
             delegate:
             Rectangle
             {
                 width: parent.width
                 height: 48
                 clip: true
-                color: "#362e2e"
+                color: "#221d1d"
                 RowLayout
                 {
                     anchors.fill: parent
@@ -48,8 +47,8 @@ Item
                         Layout.leftMargin: 7
                         asynchronous: true
                         cache: true
-                        fillMode:  Image.Stretch
-                        source: modelData ["image_url"]
+                        fillMode: Image.Stretch
+                        source: modelData ["preview_url"]
                         sourceSize: Qt.size(72, parent.height)
                     }
                 }
@@ -57,7 +56,7 @@ Item
                 Text
                 {
                     id: title
-                    text: qsTr(modelData ["title"])
+                    text: modelData ["title"]
                     anchors.centerIn: parent
                     font.bold: true
                     font.italic: true
@@ -67,10 +66,29 @@ Item
                 MouseArea
                 {
                     anchors.fill: parent
+                    scrollGestureEnabled: true
                     onClicked:
                     {
                         audio.source = modelData ["url"]
                         audio.play()
+                    }
+                }
+
+                Image
+                {
+                    id: site
+                    anchors.right: parent.right
+                    anchors.rightMargin: 7
+                    anchors.verticalCenter: parent.verticalCenter
+                    fillMode: Image.Stretch
+                    source: "../Images/site.png"
+                    sourceSize: Qt.size(28, 28)
+
+                    MouseArea
+                    {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: Qt.openUrlExternally(modelData["site"])
                     }
                 }
             }
@@ -87,10 +105,10 @@ Item
             Rectangle
             {
                 id: line
+                anchors.left: parent.left
                 height: rightPanel.height
                 width: 1
                 color: "gray"
-                anchors.left: parent.left
             }
         }
     }

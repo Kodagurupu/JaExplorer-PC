@@ -1,0 +1,9 @@
+#pragma once
+
+#define NEWS_TABLE       "CREATE TABLE News       (id   INTEGER NOT NULL UNIQUE,    url        TEXT NOT NULL,       preview_url      TEXT NOT NULL,     content	TEXT NOT NULL,              isFavourite         INTEGER NOT NULL DEFAULT 0,     PRIMARY KEY (id AUTOINCREMENT));"
+#define SAVEDWORDS_TABLE "CREATE TABLE SavedWords (id	INTEGER NOT NULL UNIQUE,    word       TEXT,                onPronunciation  TEXT,              kunPronunciation	TEXT,           meaning             TEXT NOT NULL,                  isFavourite     INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (id AUTOINCREMENT));"
+#define FAVOURITES_TABLE "CREATE TABLE Favourites (id	INTEGER NOT NULL UNIQUE,    title      TEXT NOT NULL,       category         TEXT NOT NULL,     PRIMARY KEY (id AUTOINCREMENT));"
+#define KANA_TABLE       "CREATE TABLE Kana       (id   INTEGER NOT NULL UNIQUE,    hiragana   TEXT NOT NULL,       katakana         TEXT NOT NULL,     pronunciation   TEXT NOT NULL,      PRIMARY KEY (id AUTOINCREMENT));"
+#define KANJI_TABLE      "CREATE TABLE Kanji      (id   INTEGER NOT NULL UNIQUE,    level      INTEGER NOT NULL,    symbol           TEXT NOT NULL,     onPronunciation	TEXT,               kunPronunciation	TEXT,   meaning  TEXT NOT NULL, isFavourite     INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (id AUTOINCREMENT));"
+#define VIDEO_TABLE      "CREATE TABLE Video      (id   INTEGER NOT NULL UNIQUE,    url        TEXT NOT NULL,       preview_url      TEXT NOT NULL,     title	TEXT NOT NULL,              isFavourite         INTEGER NOT NULL DEFAULT 0,     PRIMARY KEY (id AUTOINCREMENT));"
+#define RADIO_TABLE      "CREATE TABLE Radio      (id   INTEGER NOT NULL UNIQUE,    url        TEXT NOT NULL,       preview_url      TEXT NOT NULL,     site	TEXT NOT NULL,              isFavourite         INTEGER NOT NULL DEFAULT 0,     PRIMARY KEY (id AUTOINCREMENT));"
